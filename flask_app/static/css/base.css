@@ -1,0 +1,99 @@
+html {
+    height: 100%;
+  }
+
+  body { 
+    background: #212121;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  .text-white{
+    color: white;
+  }
+  .main-section {
+    flex: 1;
+  }
+  .choose-image{
+    color:white;
+  }
+
+  .range {
+    margin-top: 1.6rem;
+}
+
+  .input-file-heading {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .slider-bar {
+    transform: rotate(-90deg);
+  }
+
+  .slider-card {
+    background-color: #ededed;
+    padding: 60px 10px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 40%);
+  }
+
+  .slider-card:hover {
+    background-color: #e5e5e5;
+    transition: background-color 0.2s ease-out;
+  }
+  
+  .parameters-section {        
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* background-color: #484848; */
+  }
+
+  .parameters-heading {
+    text-align: center;
+    margin: 3rem 0 0 0;
+    /* padding: 2rem 0; */
+    /* background: #484848; */
+  }
+
+  #footer {
+    /* background-color: #8a83ff; */
+    padding: 20px;
+    text-align: center;
+  }
+  #model {
+    margin:4px;
+    float:left;
+}
+
+#model label {
+    min-width: 150px;
+    margin: 4px;
+    background-color:#EFEFEF;
+    border-radius: 4px;
+    overflow: auto;
+}
+
+#model label span {
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.5rem 0px;
+    display: block;
+}
+
+#model label input {
+    position: absolute;
+    visibility: hidden
+}
+
+#model input:checked + span {
+  color: #F7F7F7;
+  border: 2px solid #1470fd;
+}
+
+#model .model-label {
+  background-color: transparent;
+  color: white;
+}
+

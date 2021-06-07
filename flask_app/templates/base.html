@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="gun.webp" type="image/x-icon">
+
+
+    <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css"
+rel="stylesheet"
+/>
+  <link rel="stylesheet" href="../static/css/main.css">
+  <link rel="stylesheet" href="../static/css/base.css">
+  <!-- <link rel="stylesheet" href="base.css"> -->
+  <title>YOLO</title>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home">Object Detection</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="modelperformace">Model Performance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="predictions">Prediction</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN SECTION -->
+  <div class="main-section">
+    <form method="POST" action="http://localhost:5000/uploader" enctype="multipart/form-data">
+
+      <!-- INPUT FILE SECTION -->
+      <h1 class="input-file-heading">Input your image</h1>
+    
+
+      <div class="mb-3 container">
+        <label for="inputGroupFile01" class="form-label text-white">Choose Image (only .jpg, .png)</label>
+        <input class="form-control" type="file" id="inputGroupFile01" name="file">
+      </div>
+
+      <!-- PARAMETERS SECTION -->
+      <h3 class="parameters-heading">Parameters</h3>
+      <div class="parameters-section d-flex justify-content-around">
+        <div class="d-flex flex-column">
+          <label for="conf" class="form-label text-white text-lg">Confidence threshold</label>
+          <div class="range mt-4">
+            <input name="Confidence" type="range" min="0" max="1" step="0.01" value="0.25" class="form-range" id="conf">
+          </div>
+        </div>
+        <div class="d-flex flex-column">
+          <label for="iou" class="form-label text-white text-lg">IOU threshold</label>
+          <div class="range mt-4"> 
+            <input name="IOU" type="range" min="0" max="1" step="0.01" value="0.45" class="form-range" id="iou">
+          </div>
+        </div>
+        <div class="d-flex flex-column justify-content-around">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="label-check" name="isHiddenLabel" value="True">
+            <label class="form-check-label text-lg" for="label-check">Hide Label</label>
+          </div>
+
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="conf-check" name="isHiddenConf" value="True">
+            <label class="form-check-label text-lg" for="conf-check">Hide Confidence</label>
+          </div>
+        </div> 
+        
+        <div class="d-flex flex-column justify-content-around">
+          <div id="model">
+            <label class="model-label">
+              <input type="radio" name="toggle" value="model1" checked>
+              <span class="text-lg">YOLOv5s</span>
+            </label>
+            <label class="model-label">
+              <input type="radio" name="toggle" value="model2">
+              <span class="text-lg">YOLOv5x</span>
+            </label>
+          </div>
+
+        </div> 
+      </div>
+
+
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-lg btn-primary" data-mdb-ripple-color="dark">
+          Submit
+        </button>
+      </div>
+
+    </form>
+  </div>
+  <!-- FOOTER -->
+  <footer id="footer">
+    <small>&copy; Suraj Shivakumar</small>
+  </footer>
+</body>
+</html>
+  <!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
+<script src="../static/js//main.js"></script> 
+<script src="app.js"></script>

@@ -1,0 +1,5 @@
+train: ../export/images/train/
+val: ../export/images/val/
+
+nc: 1
+names: ['Handgun']
